@@ -1,0 +1,200 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-04T03:03:12.116Z",
+    "end": "2025-11-04T03:05:14.576Z",
+    "duration": 122460,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "296df410-9cea-4ffe-bb6a-6aefe0d28806",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Exemplo.cy.js",
+      "file": "cypress\\e2e\\Exemplo.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fcd04b11-e2a4-4376-ba38-2c13c9a07b06",
+          "title": "Teste Desenvolvidos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Teste de criação do user",
+              "fullTitle": "Teste Desenvolvidos Teste de criação do user",
+              "timedOut": null,
+              "duration": 13139,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let Nmber = new Date().getSeconds().toString();\nNmber = Nmber + Math.floor(Math.random() * 100000000);\nlet Nmber_name = new Date().getMinutes().toString();\nNmber_name = Nmber_name + Math.floor(Math.random() * 100000000);\nlet pw = Nmber + Nmber_name;\ncy.visit('https://automationexercise.com/?utm_source=chatgpt.com');\ncy.get('#header a[href=\"/login\"]').click();\ncy.get('[data-qa=\"signup-name\"]').type(`${pw}COWONE${Nmber_name}`);\ncy.get('[data-qa=\"signup-email\"]').type(`${pw}Kawan@teste${Nmber}.com`);\ncy.get('[data-qa=\"signup-button\"]').click();\ncy.get('[data-qa=\"password\"]').type(pw);\ncy.get('[data-qa=\"days\"]').select('2');\ncy.get('[data-qa=\"months\"]').select('2');\ncy.get('[data-qa=\"years\"]').select('2021');\ncy.get('[name=\"optin\"]').check();\ncy.get('[name=\"newsletter\"]').check();\ncy.get('[data-qa=\"first_name\"]').type(\"Kawan\");\ncy.get('[data-qa=\"last_name\"]').type(\"brito\");\ncy.get('[data-qa=\"company\"]').type(\"inatel\");\ncy.get('[data-qa=\"address\"]').type(\"cuba\");\ncy.get('[data-qa=\"address2\"]').type(\"Panama\");\ncy.get('[data-qa=\"country\"]').select('New Zealand');\ncy.get('[data-qa=\"state\"]').type(\"amazonas\");\ncy.get('[data-qa=\"city\"]').type(\"acre\");\ncy.get('[data-qa=\"zipcode\"]').type(\"00028922\");\ncy.get('[data-qa=\"mobile_number\"]').type(\"190\");\ncy.get('[data-qa=\"create-account\"]').click();\ncy.get('[data-qa=\"account-created\"]').should(\"contain.text\", \"Account Created!\");\ncy.get('[data-qa=\"continue-button\"]').click();",
+              "err": {},
+              "uuid": "6cd44d20-5a2a-4e92-8fec-90e62286df90",
+              "parentUUID": "fcd04b11-e2a4-4376-ba38-2c13c9a07b06",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Teste de Login do user",
+              "fullTitle": "Teste Desenvolvidos Teste de Login do user",
+              "timedOut": null,
+              "duration": 19257,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let infos = Criar_user();\ncy.visit('https://automationexercise.com/?utm_source=chatgpt.com');\ncy.get('#header a[href=\"/login\"]').click();\ncy.get('#header a[href=\"/login\"]').click();\ncy.get('[data-qa=\"login-email\"]').type(infos[0]);\ncy.get('[data-qa=\"login-password\"]').type(infos[1]);\ncy.get('[data-qa=\"login-button\"]').click();\ncy.get('#header b').should(\"contain.text\", infos[2]);",
+              "err": {},
+              "uuid": "5cd9fed7-be89-4bd6-ba42-861fa817b28c",
+              "parentUUID": "fcd04b11-e2a4-4376-ba38-2c13c9a07b06",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Teste de Login falha",
+              "fullTitle": "Teste Desenvolvidos Teste de Login falha",
+              "timedOut": null,
+              "duration": 19098,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let infos = Criar_user();\ncy.visit('https://automationexercise.com/?utm_source=chatgpt.com');\ncy.get('#header a[href=\"/login\"]').click();\ncy.get('#header a[href=\"/login\"]').click();\ncy.get('[data-qa=\"login-email\"]').type(infos[0]);\ncy.get('[data-qa=\"login-password\"]').type(\"qualquerSenha\");\ncy.get('[data-qa=\"login-button\"]').click();\ncy.get('#form p').should(\"contain.text\", \"Your email or password is incorrect!\");",
+              "err": {},
+              "uuid": "582d666a-737a-43e4-b645-b91c651ca55c",
+              "parentUUID": "fcd04b11-e2a4-4376-ba38-2c13c9a07b06",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Teste de Avaliar Produto",
+              "fullTitle": "Teste Desenvolvidos Teste de Avaliar Produto",
+              "timedOut": null,
+              "duration": 25719,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let infos = Criar_user();\ncy.visit('https://automationexercise.com/?utm_source=chatgpt.com');\ncy.get('#header a[href=\"/login\"]').click();\ncy.get('#header a[href=\"/login\"]').click();\ncy.get('[data-qa=\"login-email\"]').type(infos[0]);\ncy.get('[data-qa=\"login-password\"]').type(infos[1]);\ncy.get('[data-qa=\"login-button\"]').click();\ncy.get('#header a[href=\"/products\"]').click();\ncy.get('a[href=\"/product_details/1\"]').click();\ncy.get('#name').type(infos[2]);\ncy.get('#email').type(infos[0]);\ncy.get('[name=\"review\"]').type(\"Produto incrivel eu compraria com toda cerveja do mundo\");\ncy.get('#button-review').click();\ncy.get('#review-section span').should(\"contain.text\", \"Thank you for your review.\");",
+              "err": {},
+              "uuid": "f3d6af6b-4a2b-430d-b06b-5e61f4d17ddf",
+              "parentUUID": "fcd04b11-e2a4-4376-ba38-2c13c9a07b06",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Teste de Adicionar algo ao carrinho",
+              "fullTitle": "Teste Desenvolvidos Teste de Adicionar algo ao carrinho",
+              "timedOut": null,
+              "duration": 22760,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let infos = Criar_user();\ncy.visit('https://automationexercise.com/?utm_source=chatgpt.com');\ncy.get('#header a[href=\"/login\"]').click();\ncy.get('[data-qa=\"login-email\"]').type(infos[0]);\ncy.get('[data-qa=\"login-password\"]').type(infos[1]);\ncy.get('[data-qa=\"login-button\"]').click();\ncy.get('#header a[href=\"/products\"]').click();\ncy.get('a[href=\"/product_details/1\"]').click();\ncy.get('button.cart').click();\ncy.get('#cartModal div.modal-content').should(\"contain.text\", \"\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tAdded!\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tYour product has been added to cart.\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tView Cart\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tContinue Shopping\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\");",
+              "err": {},
+              "uuid": "7cbfac7e-2aeb-4f86-beed-f616b6c614aa",
+              "parentUUID": "fcd04b11-e2a4-4376-ba38-2c13c9a07b06",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Teste Deletar user",
+              "fullTitle": "Teste Desenvolvidos Teste Deletar user",
+              "timedOut": null,
+              "duration": 22071,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let infos = Criar_user();\ncy.visit('https://automationexercise.com/?utm_source=chatgpt.com');\ncy.get('#header a[href=\"/login\"]').click();\ncy.get('[data-qa=\"login-email\"]').type(infos[0]);\ncy.get('[data-qa=\"login-password\"]').type(infos[1]);\ncy.get('[data-qa=\"login-button\"]').click();\ncy.get('#header a[href=\"/delete_account\"]').click();\ncy.get('[data-qa=\"account-deleted\"]').should(\"contain.text\", \"Account Deleted!\");",
+              "err": {},
+              "uuid": "5824a9ce-d9e4-41d8-878d-1df1147e1cf8",
+              "parentUUID": "fcd04b11-e2a4-4376-ba38-2c13c9a07b06",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6cd44d20-5a2a-4e92-8fec-90e62286df90",
+            "5cd9fed7-be89-4bd6-ba42-861fa817b28c",
+            "582d666a-737a-43e4-b645-b91c651ca55c",
+            "f3d6af6b-4a2b-430d-b06b-5e61f4d17ddf",
+            "7cbfac7e-2aeb-4f86-beed-f616b6c614aa",
+            "5824a9ce-d9e4-41d8-878d-1df1147e1cf8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 122044,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}
