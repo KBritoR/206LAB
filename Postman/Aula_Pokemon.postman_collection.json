@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "39122ad5-6fab-4bea-8d39-43a71e13506f",
+		"name": "Aula_Pokemon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50178626",
+		"_collection_link": "https://kawan-brito-1485953.postman.co/workspace/cowone's-Workspace~90a77f45-d110-427c-839a-c4c861365d4b/collection/50178626-39122ad5-6fab-4bea-8d39-43a71e13506f?action=share&source=collection_link&creator=50178626"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "Localiza pokemon",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://pokeapi.co/api/v2/pokemon/pikachu",
+							"protocol": "https",
+							"host": [
+								"pokeapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"v2",
+								"pokemon",
+								"pikachu"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
