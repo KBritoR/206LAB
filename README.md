@@ -107,7 +107,7 @@ npx cypress open
 Selecione **E2E Testing**
 Depois execute o arquivo:
 
-* `demoblaze_tests.cy.js`
+* `ProvaQA.cy.js`
 
 ---
 
