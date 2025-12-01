@@ -1,0 +1,15 @@
+{
+	"id": "86ff505b-7ccf-4770-99f8-90afce0a2361",
+	"name": "New Environment",
+	"values": [
+		{
+			"key": "BASE_URL",
+			"value": "https://pokeapi.co/api/v2",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2025-12-01T02:58:44.044Z",
+	"_postman_exported_using": "Postman/11.72.3"
+}

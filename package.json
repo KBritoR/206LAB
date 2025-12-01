@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "cy:run": "cypress run",
+    "report:merge":"del /q cypress\\reports\\mochawesome.json && mochawesome-merge cypress/mochareports/*.json > cypress/reports/mochawesome.json",
+    "report:generate": "marge cypress/reports/mochawesome.json -o cypress/reports -p RelatorioFinal -i --timestamp-title",
+    "test:report": "npm run cy:run && npm run report:merge && npm run report:generate"
+  },
+  "devDependencies": {
+    "cypress": "^15.7.0",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.0"
+  }
+}

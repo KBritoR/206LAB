@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "6c608111-1bb7-4ca9-ad7d-11ae21de1f9b",
+		"name": "Prova QA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50178626"
+	},
+	"item": [
+		{
+			"name": "Cenario 1: GET pokemon (Lista)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response is an object with count > 0\", function () {",
+							"    const jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.be.an('object');",
+							"    pm.expect(jsonData.count).to.be.above(0);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/pokemon",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"pokemon"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cenario 2: GET Pikachu (Busca por Nome)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Verify Pokemon name is pikachu\", function () {",
+							"    const jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.eql(\"pikachu\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/pokemon/pikachu",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"pokemon",
+						"pikachu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cenario 3: GET Positivo (Busca por ID)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Verify ID is 25\", function () {",
+							"    const jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id).to.eql(25);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/pokemon/25",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"pokemon",
+						"25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cenario 4: GET Negativo (Busca Invalida)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+					"exec": [
+						"pm.test(\"Status code is 404 Not Found\", function () {",
+						"    pm.response.to.have.status(404);",
+						"});",
+						"pm.test(\"Response body is 'Not Found'\", function () {",
+						"    pm.expect(pm.response.text()).to.eql(\"Not Found\");",
+						"});"
+					],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/pokemon/naoexiste",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"pokemon",
+						"naoexiste"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cenario 5: Nao-GET (OPTIONS)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+					"exec": [
+						"pm.test(\"Status code is 204 No Content\", function () {",
+						"    pm.response.to.have.status(204); ",
+						"});",
+						"pm.test(\"Response body is empty (as expected for 204)\", function () {",
+						"    pm.expect(pm.response.text()).to.eql(\"\");",
+						"});"
+					],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/pokemon/pikachu",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"pokemon",
+						"pikachu"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

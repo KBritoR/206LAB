@@ -1,0 +1,55 @@
+# =========================================================
+# IGNORAR ARQUIVOS E PASTAS DE FERRAMENTAS E DEPENDÊNCIAS
+# =========================================================
+
+# Node Modules (Dependências do npm)
+# Esta pasta contém todas as bibliotecas do Node, incluindo Cypress e Newman.
+/node_modules
+
+# Arquivos de log do NPM
+npm-debug.log
+.npm/
+
+# =========================================================
+# IGNORAR ARQUIVOS ESPECÍFICOS DO CYPRESS
+# =========================================================
+
+# Vídeos (Gravações de testes)
+/cypress/videos
+
+# Screenshots (Capturas de tela de falhas)
+/cypress/screenshots
+
+# Arquivos de relatório gerados por add-ons (se usados)
+/cypress/results
+
+# Arquivos de cache do Cypress
+.cypress-cach
+
+# =========================================================
+# IGNORAR ARQUIVOS DE EXECUÇÃO E LOGS DO POSTMAN/NEWMAN
+# =========================================================
+
+# Arquivos de Ambiente
+# O arquivo de ambiente contém a BASE_URL. Ele NÃO deve ser ignorado
+# se for necessário para a execução do Newman (e não tem segredos). 
+# No entanto, se o ambiente tivesse senhas/tokens, OBRIGATORIAMENTE seria ignorado.
+# Como é uma prova acadêmica, vamos INCLUIR o ambiente JSON para facilitar a correção.
+# PokeAPI_Ambiente.json 
+
+# Relatórios gerados pelo Newman
+# Estes são arquivos grandes gerados após a execução e devem ser ignorados.
+/newman
+*.html
+*.xml
+*.json # Cuidado para não ignorar o arquivo da Coleção (Prova QA.postman_collection.json)
+
+# =========================================================
+# IGNORAR ARQUIVOS DE SISTEMA OPERACIONAL
+# =========================================================
+
+# Windows
+Thumbs.db
+
+# macOS
+.DS_Store
